@@ -1,0 +1,45 @@
+.. highlight:: bash
+
+Connecting to Linux Server
+****************************************************************************************************
+Tips on connecting/downloading to/from a server, especially **Green Planet**. 
+
+Connecting to linux server
+====================================================================================================
+With X11 forwarding enabled::
+
+    $ ssh -X userName@gplogin1.ps.uci.edu
+
+With trusted X11 forwarding enabled. Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls::
+
+    $ ssh -Y userName@gplogin1.ps.uci.edu
+
+mkdir XXXXXi
+
+wget -r -np -A.nc http://dust.ess.uci.edu/Yi essgcm15/
+
+scp guol3@gplogin1.ps.uci.edu:/export/home/guol3/Scripts/mapdraw.m /Users/liuguo/Desktop
+
+
+scp /Users/liuguo/Google\ Drive/Working/Research/Scripts/PoFireCha.m guol3@gplogin1.ps.uci.edu:/export/home/guol3/Scripts
+
+wget -r --follow-ftp http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/ -nd -A hdf 
+wget -r http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/2001.11.09/ *h20v10*.hdf
+wget -r --no-parent --reject "index.html*" http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/*
+
+
+/export/home/guol3/Scripts
+
+Connect to Computing Node:
+ssh compute-2-6 -Y 
+ssh compute-10-252 -Y
+compute-4-25 np=8 randerson_f
+compute-10-251 np=12 randerson_f
+compute-10-252 np=12 randerson_f
+compute-10-253 np=12 randerson_f
+compute-10-254 np=12 randerson_f
+
+c6145 for the randerson group has a reservation for 48 cores on compute-2-9
+
+qsub -q randerson_f -l nodes=1:ppn=12 main.py
+

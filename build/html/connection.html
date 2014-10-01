@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Connecting to Linux Server &mdash; Land Process Workflow 0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Land Process Workflow 0.0 documentation" href="index.html" />
+    <link rel="next" title="&lt;no title&gt;" href="linux.html" />
+    <link rel="prev" title="Welcome to Land Process Workflow’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="linux.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Land Process Workflow’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="connecting-to-linux-server">
+<h1>Connecting to Linux Server<a class="headerlink" href="#connecting-to-linux-server" title="Permalink to this headline">¶</a></h1>
+<p>Tips on connecting/downloading to/from a server, especially <strong>Green Planet</strong>.</p>
+<div class="section" id="id1">
+<h2>Connecting to linux server<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>With X11 forwarding enabled:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh -X userName@gplogin1.ps.uci.edu
+</pre></div>
+</div>
+<p>With trusted X11 forwarding enabled. Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">$ </span>ssh -Y userName@gplogin1.ps.uci.edu
+</pre></div>
+</div>
+<p>mkdir XXXXXi</p>
+<p>wget -r -np -A.nc <a class="reference external" href="http://dust.ess.uci.edu/Yi">http://dust.ess.uci.edu/Yi</a> essgcm15/</p>
+<p>scp <a class="reference external" href="mailto:guol3&#37;&#52;&#48;gplogin1&#46;ps&#46;uci&#46;edu">guol3<span>&#64;</span>gplogin1<span>&#46;</span>ps<span>&#46;</span>uci<span>&#46;</span>edu</a>:/export/home/guol3/Scripts/mapdraw.m /Users/liuguo/Desktop</p>
+<p>scp /Users/liuguo/GoogleDrive/Working/Research/Scripts/PoFireCha.m <a class="reference external" href="mailto:guol3&#37;&#52;&#48;gplogin1&#46;ps&#46;uci&#46;edu">guol3<span>&#64;</span>gplogin1<span>&#46;</span>ps<span>&#46;</span>uci<span>&#46;</span>edu</a>:/export/home/guol3/Scripts</p>
+<p>wget -r &#8211;follow-ftp <a class="reference external" href="http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/">http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/</a> -nd -A hdf
+wget -r <a class="reference external" href="http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/2001.11.09/">http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/2001.11.09/</a> <em>h20v10</em>.hdf
+wget -r &#8211;no-parent &#8211;reject &#8220;index.html*&#8221; <a class="reference external" href="http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/*">http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/*</a></p>
+<p>/export/home/guol3/Scripts</p>
+<p>Connect to Computing Node:
+ssh compute-2-6 -Y
+ssh compute-10-252 -Y
+compute-4-25 np=8 randerson_f
+compute-10-251 np=12 randerson_f
+compute-10-252 np=12 randerson_f
+compute-10-253 np=12 randerson_f
+compute-10-254 np=12 randerson_f</p>
+<p>c6145 for the randerson group has a reservation for 48 cores on compute-2-9</p>
+<p>qsub -q randerson_f -l nodes=1:ppn=12 main.py</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Connecting to Linux Server</a><ul>
+<li><a class="reference internal" href="#id1">Connecting to linux server</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Land Process Workflow&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="linux.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/connection.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="linux.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Land Process Workflow’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Guo Liu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

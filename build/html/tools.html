@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Useful Tools &mdash; Land Process Workflow 0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Land Process Workflow 0.0 documentation" href="index.html" />
+    <link rel="next" title="&lt;no title&gt;" href="pyEarth.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="gdal.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="pyEarth.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="gdal.html" title="&lt;no title&gt;"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="useful-tools">
+<h1>Useful Tools<a class="headerlink" href="#useful-tools" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vi">
+<h2>vi<a class="headerlink" href="#vi" title="Permalink to this headline">¶</a></h2>
+<p># at beginning of 14-20 line:</p>
+<div class="highlight-bash"><div class="highlight"><pre>14,20s/^/#/
+</pre></div>
+</div>
+</div>
+<div class="section" id="git">
+<h2>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
+<p>Add and commit in one line. Set global alias for the first time:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git config --global alias.add-commit <span class="s1">&#39;!git add -A &amp;&amp; git commit&#39;</span>
+</pre></div>
+</div>
+<p>and then:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git add-commit -m <span class="s1">&#39;Stable version&#39;</span>
+</pre></div>
+</div>
+<p>Delete remote branch:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git push origin --delete &lt;branchName&gt;
+</pre></div>
+</div>
+<p>Delete local:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git branch -d local_branch
+</pre></div>
+</div>
+<p>Overwrite local change:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git fetch --all
+git reset --hard origin/master
+</pre></div>
+</div>
+</div>
+<div class="section" id="decompilers">
+<h2>Decompilers<a class="headerlink" href="#decompilers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash"><div class="highlight"><pre>uncompyle2 &lt;pyc file&gt;
+</pre></div>
+</div>
+<p>Source code at <a class="reference external" href="https://github.com/wibiti/uncompyle2">https://github.com/wibiti/uncompyle2</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Useful Tools</a><ul>
+<li><a class="reference internal" href="#vi">vi</a></li>
+<li><a class="reference internal" href="#git">git</a></li>
+<li><a class="reference internal" href="#decompilers">Decompilers</a><ul>
+<li><a class="reference internal" href="#python">Python</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="gdal.html"
+                        title="previous chapter">&lt;no title&gt;</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pyEarth.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/tools.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="pyEarth.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="gdal.html" title="&lt;no title&gt;"
+             >previous</a> |</li>
+        <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Guo Liu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

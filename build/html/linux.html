@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Linux System and Bash &mdash; Land Process Workflow 0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Land Process Workflow 0.0 documentation" href="index.html" />
+    <link rel="next" title="&lt;no title&gt;" href="python.html" />
+    <link rel="prev" title="Welcome to Land Process Workflow’s documentation!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="python.html" title="&lt;no title&gt;"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Land Process Workflow’s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="linux-system-and-bash">
+<h1>Linux System and Bash<a class="headerlink" href="#linux-system-and-bash" title="Permalink to this headline">¶</a></h1>
+<p>Tips on linux system and Unix shell <strong>Bash</strong>.</p>
+<div class="section" id="connecting-to-linux-server">
+<h2>Connecting to Linux Server<a class="headerlink" href="#connecting-to-linux-server" title="Permalink to this headline">¶</a></h2>
+<p>Tips on connecting/downloading to/from a server, especially <strong>Green Planet</strong>.</p>
+<div class="section" id="login-nodes">
+<h3>Login Nodes<a class="headerlink" href="#login-nodes" title="Permalink to this headline">¶</a></h3>
+<p>First login to <strong>login nodes</strong>. With X11 forwarding enabled:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ssh -X userName@gplogin1.ps.uci.edu
+</pre></div>
+</div>
+<p>Or with trusted X11 forwarding enabled:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ssh -Y userName@gplogin1.ps.uci.edu
+</pre></div>
+</div>
+<p>Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password.</p>
+</div>
+<div class="section" id="computing-nodes">
+<h3>Computing Nodes<a class="headerlink" href="#computing-nodes" title="Permalink to this headline">¶</a></h3>
+<p>Computation should be done on computing nodes. Simply <tt class="docutils literal"><span class="pre">ssh</span></tt> to an computing node by <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">compute-2-6</span> <span class="pre">-Y</span></tt>. Randerson group has nodes from <tt class="docutils literal"><span class="pre">-10-251</span></tt> to <tt class="docutils literal"><span class="pre">-10-254</span></tt>, and  reservation for 48 cores on <tt class="docutils literal"><span class="pre">-2-9</span></tt>.</p>
+</div>
+<div class="section" id="job-submission-to-cluster">
+<h3>Job Submission to Cluster<a class="headerlink" href="#job-submission-to-cluster" title="Permalink to this headline">¶</a></h3>
+<p><strong>Green Planet</strong> uses the open-source PBS torque system:</p>
+<div class="highlight-bash"><div class="highlight"><pre>qsub -q randerson_f -l <span class="nv">nodes</span><span class="o">=</span>1:ppn<span class="o">=</span>12 test.py
+</pre></div>
+</div>
+<p>Show all queues:</p>
+<div class="highlight-bash"><div class="highlight"><pre>qstat -Q
+</pre></div>
+</div>
+<p>Delete a job:</p>
+<div class="highlight-bash"><div class="highlight"><pre>qdel jobID
+</pre></div>
+</div>
+<p>Report the status of a job:</p>
+<div class="highlight-bash"><div class="highlight"><pre>checkjob jobID
+</pre></div>
+</div>
+<p>Download/Upload from/to a Server:</p>
+<div class="highlight-bash"><div class="highlight"><pre>scp userName@gplogin1.ps.uci.edu:fileSourcePath fileTargetPath
+</pre></div>
+</div>
+<p>For path in Linux system, space should be proceeded by <tt class="docutils literal"><span class="pre">\</span></tt>. For exampe <tt class="docutils literal"><span class="pre">./Google</span> <span class="pre">Drive</span></tt> should be <tt class="docutils literal"><span class="pre">./Google\</span> <span class="pre">Drive</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="system-tools-and-bash">
+<h2>System Tools and Bash<a class="headerlink" href="#system-tools-and-bash" title="Permalink to this headline">¶</a></h2>
+<p>Softwares can be found under <tt class="docutils literal"><span class="pre">/sopt</span></tt>.</p>
+<p>Execute a file with <tt class="docutils literal"><span class="pre">./someExecutable</span></tt>. Making new directory with <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">directoryName</span></tt>.</p>
+<p>Download:</p>
+<div class="highlight-bash"><div class="highlight"><pre>wget -r -np -A.nc http://dust.ess.uci.edu/Yi essgcm15/
+wget -r --follow-ftp http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/ -nd -A hdf
+wget -r http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/2001.11.09/ *h20v10*.hdf
+wget -r --no-parent --reject <span class="s2">&quot;index.html*&quot;</span> http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/*
+</pre></div>
+</div>
+<p><strong>Matlab</strong> is located at <tt class="docutils literal"><span class="pre">/sopt/rc/matlab_float_2012b.sh</span></tt>. First execute the <tt class="docutils literal"><span class="pre">.sh</span></tt> file, and then start Matlab with <tt class="docutils literal"><span class="pre">matlab</span></tt>, <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodesktop</span></tt> or <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodisplay</span></tt></p>
+<p>Get <strong>processes</strong> snapshot with <tt class="docutils literal"><span class="pre">ps</span></tt>, or user-oriented output format with <tt class="docutils literal"><span class="pre">ps</span> <span class="pre">u</span></tt>. Kill a process with <tt class="docutils literal"><span class="pre">kill</span> <span class="pre">-9</span> <span class="pre">processID</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-a</span></tt> starts a new <strong>screen</strong>, <em>Ctrl-a-d</em> detachs from it, and <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-r</span> <span class="pre">screenID</span></tt> reattachs. <em>screenID</em> will showup after <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-r</span></tt> when you have multi-screens. Terminate a screen with <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-X</span> <span class="pre">-S</span> <span class="pre">screenID</span> <span class="pre">quit</span></tt>. If your network connection fails, screen will automatically detach your session.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Linux System and Bash</a><ul>
+<li><a class="reference internal" href="#connecting-to-linux-server">Connecting to Linux Server</a><ul>
+<li><a class="reference internal" href="#login-nodes">Login Nodes</a></li>
+<li><a class="reference internal" href="#computing-nodes">Computing Nodes</a></li>
+<li><a class="reference internal" href="#job-submission-to-cluster">Job Submission to Cluster</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-tools-and-bash">System Tools and Bash</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Land Process Workflow&#8217;s documentation!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="python.html"
+                        title="next chapter">&lt;no title&gt;</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/linux.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="python.html" title="&lt;no title&gt;"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Land Process Workflow’s documentation!"
+             >previous</a> |</li>
+        <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Guo Liu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
