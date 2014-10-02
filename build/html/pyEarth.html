@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>&lt;no title&gt; &mdash; Land Process Workflow 0.0 documentation</title>
+    <title>Documentation for the Code &mdash; Land Process Workflow 0.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Land Process Workflow 0.0 documentation" href="index.html" />
-    <link rel="prev" title="&lt;no title&gt;" href="tools.html" /> 
+    <link rel="prev" title="Useful Tools" href="tools.html" /> 
   </head>
   <body>
     <div class="related">
@@ -35,7 +35,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="tools.html" title="&lt;no title&gt;"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tools.html" title="Useful Tools"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
       </ul>
@@ -46,7 +49,33 @@
         <div class="bodywrapper">
           <div class="body">
             
-  
+  <div class="section" id="module-pyEarth.matr">
+<span id="documentation-for-the-code"></span><h1>Documentation for the Code<a class="headerlink" href="#module-pyEarth.matr" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="pyEarth.matr.cleaner">
+<tt class="descclassname">pyEarth.matr.</tt><tt class="descname">cleaner</tt><big>(</big><em>dataList</em>, <em>mask=None</em>, <em>nameList=None</em>, <em>nanCut=True</em><big>)</big><a class="reference internal" href="_modules/pyEarth/matr.html#cleaner"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#pyEarth.matr.cleaner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Through away the NaNs in multiple dataset with the same size, and/or output to Panda DataFrame if <em>nameList</em> is provided.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dataList</strong> &#8211; list or tuple. Input data arrays.</li>
+<li><strong>mask</strong> &#8211; matrix of bool, optional. Mask of valid data.</li>
+<li><strong>nameList</strong> &#8211; list of str, optional. List of columns names. Output to DataFrame if provided. Otherwise output is a list of arrays.</li>
+<li><strong>nanCut</strong> &#8211; bool, optinal. Through away NaNs.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list (when <em>nameList</em> not provided) or DataFrame (when <em>nameList</em> is provided).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
 
           </div>
         </div>
@@ -55,7 +84,7 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="tools.html"
-                        title="previous chapter">&lt;no title&gt;</a></p>
+                        title="previous chapter">Useful Tools</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/pyEarth.txt"
@@ -85,7 +114,10 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="tools.html" title="&lt;no title&gt;"
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="tools.html" title="Useful Tools"
              >previous</a> |</li>
         <li><a href="index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li> 
       </ul>

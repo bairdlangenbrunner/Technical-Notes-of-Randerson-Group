@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>pyEarth.matr &mdash; Land Process Workflow 0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Land Process Workflow 0.0 documentation" href="../../index.html" />
+    <link rel="up" title="Module code" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Module code</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <h1>Source code for pyEarth.matr</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">conf</span> <span class="kn">import</span><span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="c">####################################################################################################</span>
+<span class="c">####################################################################################################</span>
+<span class="c">####################################################################################################</span>
+<span class="c">####################################################################################################</span>
+<span class="k">def</span> <span class="nf">reBin</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
+    <span class="n">sh</span> <span class="o">=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nanmean</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sh</span><span class="p">),</span><span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c">####################################################################################################</span>
+<div class="viewcode-block" id="cleaner"><a class="viewcode-back" href="../../pyEarth.html#pyEarth.matr.cleaner">[docs]</a><span class="k">def</span> <span class="nf">cleaner</span><span class="p">(</span><span class="n">dataList</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nameList</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">nanCut</span><span class="o">=</span><span class="bp">True</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Through away the NaNs in multiple dataset with the same size, and/or output to Panda DataFrame if *nameList* is provided.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        dataList: list or tuple. Input data arrays.</span>
+<span class="sd">        mask: matrix of bool, optional. Mask of valid data.</span>
+<span class="sd">        nameList: list of str, optional. List of columns names. Output to DataFrame if provided. Otherwise output is a list of arrays.</span>
+<span class="sd">        nanCut: bool, optinal. Through away NaNs.</span>
+<span class="sd">    </span>
+<span class="sd">    Return:</span>
+<span class="sd">        list (when *nameList* not provided) or DataFrame (when *nameList* is provided).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">comMask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">dataList</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">bool</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nanCut</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataList</span><span class="p">)):</span>
+            <span class="n">comMask</span> <span class="o">=</span> <span class="n">comMask</span> <span class="o">&amp;</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">dataList</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">mask</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">comMask</span> <span class="o">=</span> <span class="n">comMask</span> <span class="o">&amp;</span> <span class="n">mask</span>
+    
+    <span class="k">if</span> <span class="n">nameList</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataList</span><span class="p">)</span><span class="o">!=</span><span class="nb">len</span><span class="p">(</span><span class="n">nameList</span><span class="p">):</span>
+            <span class="k">print</span> <span class="s">&#39;Cleaner: Wrong length for variable name.&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span> <span class="p">{</span><span class="n">nameList</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span> <span class="n">dataList</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">comMask</span><span class="p">]}</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataList</span><span class="p">))])</span>
+    <span class="k">return</span> <span class="p">[</span> <span class="n">dataList</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">comMask</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dataList</span><span class="p">))</span> <span class="p">]</span>
+
+<span class="c">####################################################################################################</span></div>
+<span class="k">def</span> <span class="nf">arraySamp</span><span class="p">(</span><span class="n">array</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">):</span>
+    <span class="n">pool</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nonzero</span><span class="p">(</span><span class="n">array</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">pool</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;Not enough sample. Sample size: &#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">pool</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">None</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">pool</span><span class="p">,</span> <span class="n">size</span><span class="p">))</span>
+    <span class="n">new_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">array</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="n">new_array</span><span class="p">[</span><span class="n">ind</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ind</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">return</span> <span class="n">new_array</span>
+
+<span class="c">####################################################################################################</span>
+<span class="k">def</span> <span class="nf">maskSamp</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">contr</span><span class="p">,</span> <span class="n">minEdge</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">maxEdge</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">inter</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">50</span><span class="p">):</span>
+    <span class="c">#sample mask layer according to contr to avoid distribution error in data</span>
+    <span class="n">new_mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">mask</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="nb">bool</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">minEdge</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">minEdge</span> <span class="o">=</span> <span class="n">contr</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">maxEdge</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">maxEdge</span> <span class="o">=</span> <span class="p">(</span><span class="n">contr</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">+</span><span class="mf">0.999</span><span class="o">*</span><span class="n">inter</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">minEdge</span><span class="p">,</span> <span class="n">maxEdge</span><span class="p">,</span> <span class="n">inter</span><span class="p">):</span>
+        <span class="n">temMa</span> <span class="o">=</span> <span class="n">arraySamp</span><span class="p">((</span><span class="n">contr</span><span class="o">&lt;=</span><span class="n">edge</span><span class="o">+</span><span class="n">inter</span><span class="p">)</span><span class="o">&amp;</span><span class="p">(</span><span class="n">contr</span><span class="o">&gt;=</span><span class="n">edge</span><span class="p">)</span><span class="o">&amp;</span><span class="n">mask</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">size</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">temMa</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span> <span class="s">&#39;Reduce sample size at edge: &#39;</span><span class="p">,</span> <span class="n">edge</span>
+            <span class="k">return</span> <span class="bp">None</span>
+        <span class="n">new_mask</span> <span class="o">=</span> <span class="n">new_mask</span><span class="o">|</span><span class="n">temMa</span>    
+    <span class="k">return</span> <span class="n">new_mask</span>
+
+<span class="c">####################################################################################################</span>
+<span class="k">def</span> <span class="nf">quaReg</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">rpy2.robjects</span> <span class="kn">as</span> <span class="nn">robjects</span> 
+    <span class="n">rObj</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">r</span>
+    <span class="n">qreg</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">importr</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">&#39;quantreg&#39;</span><span class="p">)</span>
+    
+    <span class="n">rObj</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">&#39;xr&#39;</span><span class="p">,</span> <span class="n">robjects</span><span class="o">.</span><span class="n">FloatVector</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">rObj</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="s">&#39;yr&#39;</span><span class="p">,</span> <span class="n">robjects</span><span class="o">.</span><span class="n">FloatVector</span><span class="p">(</span><span class="n">y</span><span class="p">))</span>
+    <span class="n">rObj</span><span class="p">(</span><span class="s">&quot;dt &lt;- data.frame(xr,yr)&quot;</span><span class="p">)</span>
+    <span class="n">fmla</span> <span class="o">=</span> <span class="n">robjects</span><span class="o">.</span><span class="n">Formula</span><span class="p">(</span><span class="s">&#39;&#39;</span><span class="p">)</span>
+
+<span class="c">####################################################################################################</span>
+<span class="k">def</span> <span class="nf">binPer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="n">nbin</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">percen</span> <span class="o">=</span> <span class="mi">90</span><span class="p">,</span> <span class="n">med</span> <span class="o">=</span> <span class="bp">True</span><span class="p">):</span>
+    <span class="k">print</span> <span class="s">&#39;Calculating upper boundary. Percentage:&#39;</span><span class="p">,</span> <span class="n">percen</span>
+    <span class="kn">from</span> <span class="nn">accumarray</span> <span class="kn">import</span> <span class="n">accum</span>
+    <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">stats</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+    
+    <span class="n">xOrd</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">rankdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">method</span><span class="o">=</span><span class="s">&#39;dense&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">nbin</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">nbin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">((</span><span class="n">xOrd</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">//</span><span class="mi">100</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+        <span class="k">print</span> <span class="s">&#39;Automatic bin number:&#39;</span><span class="p">,</span> <span class="n">nbin</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span> <span class="s">&#39;User assigned bin number:&#39;</span><span class="p">,</span> <span class="n">nbin</span>
+    <span class="n">binWid</span> <span class="o">=</span> <span class="n">xOrd</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="mf">1.0</span><span class="o">/</span><span class="n">nbin</span> 
+    <span class="n">mapper</span> <span class="o">=</span> <span class="p">(</span><span class="n">xOrd</span><span class="o">//</span><span class="n">binWid</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span>    
+
+    <span class="n">yNew</span> <span class="o">=</span> <span class="n">accum</span><span class="p">(</span><span class="n">mapper</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">[:],</span> <span class="n">percen</span><span class="p">))</span>
+    <span class="n">xNew</span> <span class="o">=</span> <span class="n">accum</span><span class="p">(</span><span class="n">mapper</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="s">&#39;mean&#39;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">med</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">xNew</span><span class="p">,</span> <span class="n">yNew</span><span class="p">,</span> <span class="n">accum</span><span class="p">(</span><span class="n">mapper</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">func</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">x</span><span class="p">[:],</span> <span class="mi">50</span><span class="p">))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">xNew</span><span class="p">,</span> <span class="n">yNew</span>
+
+<span class="c">####################################################################################################</span>
+<span class="k">def</span> <span class="nf">reMap</span><span class="p">(</span><span class="n">xUpp</span><span class="p">,</span> <span class="n">yUpp</span><span class="p">,</span> <span class="n">xBas</span><span class="p">,</span> <span class="n">template</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">flnm</span> <span class="o">=</span> <span class="bp">None</span><span class="p">):</span>
+    <span class="n">xMask</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">xBas</span><span class="p">)</span>
+    
+    <span class="n">yPo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="n">xBas</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+    <span class="n">yPo</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+    <span class="n">yPo</span><span class="p">[</span><span class="n">xMask</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">interp</span><span class="p">(</span><span class="n">xBas</span><span class="p">[</span><span class="n">xMask</span><span class="p">],</span> <span class="n">xUpp</span><span class="p">,</span> <span class="n">yUpp</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">template</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">flnm</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">GIS</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">yPo</span><span class="p">,</span> <span class="n">flnm</span><span class="p">,</span> <span class="n">template</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">yPo</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="../../index.html">Land Process Workflow 0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Module code</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Guo Liu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>

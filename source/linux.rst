@@ -52,8 +52,10 @@ Softwares can be found under ``/sopt``.
 
 Execute a file with ``./someExecutable``. Making new directory with ``mkdir directoryName``.
 
-Download::
-    
+Download
+----------------------------------------------------------------------------------------------------    
+wget::
+
     wget -r -np -A.nc http://dust.ess.uci.edu/Yi essgcm15/
     wget -r --follow-ftp http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/ -nd -A hdf 
     wget -r http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/2001.11.09/ *h20v10*.hdf
