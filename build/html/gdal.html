@@ -36,6 +36,9 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="tools.html" title="Useful Tools"
              accesskey="N">next</a> |</li>
         <li class="right" >
@@ -52,9 +55,31 @@
             
   <div class="section" id="gdal-utilities-and-python-binding">
 <h1>GDAL Utilities and Python Binding<a class="headerlink" href="#gdal-utilities-and-python-binding" title="Permalink to this headline">¶</a></h1>
-<p>Installation:</p>
+<div class="section" id="installation">
+<h2>Installation::<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="mac">
+<h3>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h3>
+<p>The essiest way of isntalling gdal library on Mac is using <a class="reference external" href="https://www.macports.org/">MacPorts</a>. Install gdal with hdf4, hdf5 and netCDF support:</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo port install gdal +hdf4 +hdf5 +netcdf
+</pre></div>
+</div>
+</div>
+<div class="section" id="linux">
+<h3>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="apt">
+<h4>APT<a class="headerlink" href="#apt" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="yum">
+<h4>YUM<a class="headerlink" href="#yum" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="mannual">
+<h4>Mannual<a class="headerlink" href="#mannual" title="Permalink to this headline">¶</a></h4>
+<p>Unfortiunately we don&#8217;t have root access on Greeplanet, and many of the packages are out of date. Therefore we need to build gdal and all its dependencies. Use <tt class="docutils literal"><span class="pre">--prefix=path</span></tt> flag to avaid the need of root access:</p>
 <div class="highlight-bash"><div class="highlight"><pre>./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local --with-hdf5<span class="o">=</span><span class="nv">$HOME</span>/local/hdf5km --with-hdf4<span class="o">=</span><span class="nv">$HOME</span>/local/hdf4 --with-netcdf<span class="o">=</span><span class="nv">$HOME</span>/local/netcdf --witlih-static-proj4<span class="o">=</span><span class="nv">$HOME</span>/local/proj4 --with-libkml<span class="o">=</span><span class="nv">$HOME</span>/local/libkml --with-static-zlib<span class="o">=</span><span class="nv">$HOME</span>/local/zlib
 </pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -64,6 +89,23 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">GDAL Utilities and Python Binding</a><ul>
+<li><a class="reference internal" href="#installation">Installation::</a><ul>
+<li><a class="reference internal" href="#mac">Mac</a></li>
+<li><a class="reference internal" href="#linux">Linux</a><ul>
+<li><a class="reference internal" href="#apt">APT</a></li>
+<li><a class="reference internal" href="#yum">YUM</a></li>
+<li><a class="reference internal" href="#mannual">Mannual</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="python.html"
                         title="previous chapter">&lt;no title&gt;</a></p>
@@ -98,6 +140,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
         <li class="right" >
           <a href="tools.html" title="Useful Tools"
              >next</a> |</li>

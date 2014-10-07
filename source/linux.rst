@@ -2,11 +2,11 @@
 
 Linux System and Bash
 ****************************************************************************************************
-Tips on linux system and Unix shell **Bash**. 
+Here is a useful `introduction on Linux systen <http://ryanstutorials.net/linuxtutorial/>`_, including information on `vi <http://ryanstutorials.net/linuxtutorial/vi.php>`_ and `Grep and Regular Expressions <http://ryanstutorials.net/linuxtutorial/grep.php>`_. Greenplanet uses `Scientific Linux <http://en.wikipedia.org/wiki/Scientific_Linux>`_, with `Bash <http://en.wikipedia.org/wiki/Bash_(Unix_shell)>`_ as default system language. For example you can navigate system with ``cd path``, execute a file with ``. /someExecutable``, make new directory with ``mkdir directoryName``. 
 
 Connecting to Linux Server
 ====================================================================================================
-Tips on connecting/downloading to/from a server, especially **Green Planet**.
+Tips on connecting/downloading to/from a server, especially `Green Planet <https://greenplanet.ps.uci.edu/help.html>`_.
 
 Login Nodes
 ----------------------------------------------------------------------------------------------------
@@ -19,6 +19,7 @@ Or with trusted X11 forwarding enabled::
     ssh -Y userName@gplogin1.ps.uci.edu
 Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password.
 
+Using public key authentication with SSH avoids typing password every time. Instructions can be found `here <http://crashmag.net/public-key-authentication-awith-ssh-both-with-and-without-a-password>`_.
 
 Computing Nodes
 ----------------------------------------------------------------------------------------------------
@@ -46,11 +47,9 @@ Download/Upload from/to a Server::
 
 For path in Linux system, space should be proceeded by ``\``. For exampe ``./Google Drive`` should be ``./Google\ Drive``.
 
-System Tools and Bash
+System Tools
 ====================================================================================================
 Softwares can be found under ``/sopt``.
-
-Execute a file with ``./someExecutable``. Making new directory with ``mkdir directoryName``.
 
 Download
 ----------------------------------------------------------------------------------------------------    
