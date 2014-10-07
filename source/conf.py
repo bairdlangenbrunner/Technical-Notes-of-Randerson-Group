@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Land Process Workflow documentation build configuration file, created by
+# Technical Note of Randerson Group build configuration file, created by
 # sphinx-quickstart on Tue Sep 30 16:27:01 2014.
 #
 # This file is execfile()d with the current directory set to its
@@ -41,7 +41,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['worf_templates']
+templates_path = ['templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Land Process Workflow'
+project = u'Technical Note of Randerson Group'
 copyright = u'2014, Guo Liu'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -137,7 +137,7 @@ html_theme = 'default'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['worf_static']
+html_static_path = ['static']
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -186,7 +186,7 @@ html_static_path = ['worf_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'LandProcessWorkflowdoc'
+htmlhelp_basename = 'TechnicalNotedoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -206,7 +206,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'LandProcessWorkflow.tex', u'Land Process Workflow Documentation',
+  ('index', 'TechnicalNote.tex', u'Technical Note of Randerson Group Documentation',
    u'Guo Liu', 'manual'),
 ]
 
@@ -236,7 +236,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'landprocessworkflow', u'Land Process Workflow Documentation',
+    ('index', 'technicalnote', u'Technical Note of Randerson Group',
      [u'Guo Liu'], 1)
 ]
 
@@ -250,8 +250,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'LandProcessWorkflow', u'Land Process Workflow Documentation',
-   u'Guo Liu', 'LandProcessWorkflow', 'One line description of project.',
+  ('index', 'TechnicalNote', u'Technical Note of Randerson Group',
+   u'Guo Liu', 'TechnicalNote', 'One line description of project.',
    'Miscellaneous'),
 ]
 
