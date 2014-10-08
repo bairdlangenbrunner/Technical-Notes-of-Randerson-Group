@@ -12,6 +12,47 @@ vi
 
 git
 ====================================================================================================
+Powerful tool for verson control and cooperation. A nice introduction can be found here: `git-the simple guide <http://rogerdudler.github.io/git-guide/>`_ (with whatever language you prefer!).
+
+Different ways of doing ``git add``
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+::
+
+    git add .
+Looks at the working tree and adds all those paths to the staged changes if they are either changed or are new and not ignored, it does not stage any 'rm' actions.
+
+
+::
+
+    git add -u 
+Looks at all the currently tracked files and stages the changes to those files if they are different or if they have been removed. It does not add any new files, it only stages changes to already tracked files.
+
+
+::
+
+    git add -A
+Equivalent to ``git add .; git add -u``.
+
+Delete a branch
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Remote::
+
+    git push origin --delete <branchName>
+
+Local::
+    
+    git branch -d local_branch
+
+Overwrite local change
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+::
+
+    git fetch --all
+    git reset --hard origin/master
+
+
+Set global alias
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Add and commit in one line. Set global alias for the first time::
 
     git config --global alias.add-commit '!git add -A && git commit'
@@ -19,18 +60,6 @@ and then::
     
     git add-commit -m 'Stable version'
 
-Delete remote branch::
-    
-    git push origin --delete <branchName>
-
-Delete local::
-    
-    git branch -d local_branch
-
-Overwrite local change::
-
-    git fetch --all
-    git reset --hard origin/master
 
 Decompilers
 ====================================================================================================
