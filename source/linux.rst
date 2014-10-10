@@ -25,6 +25,9 @@ Computing Nodes
 ----------------------------------------------------------------------------------------------------
 Computation should be done on computing nodes. Simply ``ssh`` to an computing node by ``ssh compute-2-6 -Y``. Randerson group has nodes from ``-10-251`` to ``-10-254``, and  reservation for 48 cores on ``-2-9``.
 
+You could also use ``qsub`` to request memory and CPU for current session. For example::
+
+    qsub -q randerson_f -X -I -l walltime=24:00:00,mem=16g,nodes=1:ppn=30
 
 Job Submission to Cluster
 ----------------------------------------------------------------------------------------------------

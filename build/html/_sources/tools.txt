@@ -12,7 +12,7 @@ vi
 
 git
 ====================================================================================================
-Powerful tool for verson control and cooperation. A nice introduction can be found here: `git-the simple guide <http://rogerdudler.github.io/git-guide/>`_ (with whatever language you prefer!).
+Powerful tool for verson control and cooperation. A nice introduction can be found here: `git-the simple guide <http://rogerdudler.github.io/git-guide/>`_ (in whatever language you prefer!).
 
 Different ways of doing ``git add``
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -58,17 +58,36 @@ Add and commit in one line. Set global alias for the first time::
     git config --global alias.add-commit '!git add -A && git commit'
 and then::
     
-    git add-commit -m 'Stable version'
+    git add-commit -m 'Whatever you want to say'
 
+Transfer repository between different version control system
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For example, transfer your repository from `Bitbucket <https://bitbucket.org/>`_ to `GitHub <https://github.com/>`_ (Sorry Bitbucket!). First import your repository to GitHub using importer provided by GitHub: https://porter.github.com/new. Then in your local up-to-date repository::
+
+    git remote rename origin bitbucket
+    git remote add origin https://github.com/IAmJustAnExamplePerson/AndIAmJustAnExampleRepository.git
+    git push origin master
 
 Decompilers
 ====================================================================================================
+Save you source code from byte-code.
 
 Python
 ----------------------------------------------------------------------------------------------------
-::
-    
+Get back your **.py** file from **.pyc** file.
+
+uncompyle2
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For Python2.7. Source code at https://github.com/wibiti/uncompyle2. Usage::
+ 
     uncompyle2 <pyc file>
 
-Source code at https://github.com/wibiti/uncompyle2
- 
+unpyc3
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For Python3.2. Source code at https://code.google.com/p/unpyc3/. Usage (in Python):
+
+.. code-block:: python
+
+    from unpyc3 import decompile
+    import foo
+    print(decompile(foo))

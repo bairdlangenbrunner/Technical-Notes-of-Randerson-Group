@@ -61,7 +61,7 @@
 </div>
 <div class="section" id="git">
 <h2>git<a class="headerlink" href="#git" title="Permalink to this headline">¶</a></h2>
-<p>Powerful tool for verson control and cooperation. A nice introduction can be found here: <a class="reference external" href="http://rogerdudler.github.io/git-guide/">git-the simple guide</a> (with whatever language you prefer!).</p>
+<p>Powerful tool for verson control and cooperation. A nice introduction can be found here: <a class="reference external" href="http://rogerdudler.github.io/git-guide/">git-the simple guide</a> (in whatever language you prefer!).</p>
 <div class="section" id="different-ways-of-doing-git-add">
 <h3>Different ways of doing <tt class="docutils literal"><span class="pre">git</span> <span class="pre">add</span></tt><a class="headerlink" href="#different-ways-of-doing-git-add" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre>git add .
@@ -102,17 +102,40 @@ git reset --hard origin/master
 </pre></div>
 </div>
 <p>and then:</p>
-<div class="highlight-bash"><div class="highlight"><pre>git add-commit -m <span class="s1">&#39;Stable version&#39;</span>
+<div class="highlight-bash"><div class="highlight"><pre>git add-commit -m <span class="s1">&#39;Whatever you want to say&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transfer-repository-between-different-version-control-system">
+<h3>Transfer repository between different version control system<a class="headerlink" href="#transfer-repository-between-different-version-control-system" title="Permalink to this headline">¶</a></h3>
+<p>For example, transfer your repository from <a class="reference external" href="https://bitbucket.org/">Bitbucket</a> to <a class="reference external" href="https://github.com/">GitHub</a> (Sorry Bitbucket!). First import your repository to GitHub using importer provided by GitHub: <a class="reference external" href="https://porter.github.com/new">https://porter.github.com/new</a>. Then in your local up-to-date repository:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git remote rename origin bitbucket
+git remote add origin https://github.com/IAmJustAnExamplePerson/AndIAmJustAnExampleRepository.git
+git push origin master
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="decompilers">
 <h2>Decompilers<a class="headerlink" href="#decompilers" title="Permalink to this headline">¶</a></h2>
+<p>Save you source code from byte-code.</p>
+<p>Get back your <strong>.py</strong> file from <strong>.pyc</strong> file.</p>
+<div class="section" id="uncompyle2">
+<h3>uncompyle2<a class="headerlink" href="#uncompyle2" title="Permalink to this headline">¶</a></h3>
+<p>For Python2.7. Source code at <a class="reference external" href="https://github.com/wibiti/uncompyle2">https://github.com/wibiti/uncompyle2</a>. Usage:</p>
 <div class="highlight-bash"><div class="highlight"><pre>uncompyle2 &lt;pyc file&gt;
 </pre></div>
 </div>
-<p>Source code at <a class="reference external" href="https://github.com/wibiti/uncompyle2">https://github.com/wibiti/uncompyle2</a></p>
+</div>
+<div class="section" id="unpyc3">
+<h3>unpyc3<a class="headerlink" href="#unpyc3" title="Permalink to this headline">¶</a></h3>
+<p>For Python3.2. Source code at <a class="reference external" href="https://code.google.com/p/unpyc3/">https://code.google.com/p/unpyc3/</a>. Usage (in Python):</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">unpyc3</span> <span class="kn">import</span> <span class="n">decompile</span>
+<span class="kn">import</span> <span class="nn">foo</span>
+<span class="k">print</span><span class="p">(</span><span class="n">decompile</span><span class="p">(</span><span class="n">foo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 
@@ -131,9 +154,14 @@ git reset --hard origin/master
 <li><a class="reference internal" href="#delete-a-branch">Delete a branch</a></li>
 <li><a class="reference internal" href="#overwrite-local-change">Overwrite local change</a></li>
 <li><a class="reference internal" href="#set-global-alias">Set global alias</a></li>
+<li><a class="reference internal" href="#transfer-repository-between-different-version-control-system">Transfer repository between different version control system</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#decompilers">Decompilers</a></li>
+<li><a class="reference internal" href="#decompilers">Decompilers</a><ul>
+<li><a class="reference internal" href="#uncompyle2">uncompyle2</a></li>
+<li><a class="reference internal" href="#unpyc3">unpyc3</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
