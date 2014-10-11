@@ -1,61 +1,129 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>Linux System and Bash &mdash; Technical Note of Randerson Group 0.0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="Technical Note of Randerson Group 0.0 documentation" href="index.html" />
-    <link rel="next" title="&lt;no title&gt;" href="python.html" />
-    <link rel="prev" title="Welcome to Land Process Workflow’s documentation!" href="index.html" /> 
-  </head>
-  <body>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="python.html" title="&lt;no title&gt;"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Land Process Workflow’s documentation!"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Technical Note of Randerson Group 0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>  
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Linux System and Bash &mdash; Technical Note of Randerson Group 0.0 documentation</title>
+  
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body">
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="Technical Note of Randerson Group 0.0 documentation" href="index.html"/>
+        <link rel="next" title="Python" href="python.html"/>
+        <link rel="prev" title="Welcome to Technical Notes of Randerson Group!" href="index.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> Technical Note of Randerson Group</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Linux System and Bash</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#connecting-to-linux-server">Connecting to Linux Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bash-basic-commands">Bash Basic Commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#system-tools">System Tools</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="python.html#installation-and-package-manager">Installation and Package Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="python.html#useful-package">Useful Package</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="gdal.html">GDAL Utilities and Python Binding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="gdal.html#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#vi">vi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#git">git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#decompilers">Decompilers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="group.html">Resource for Randerson Group</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="group.html#computation">Computation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="group.html#data">Data</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Technical Note of Randerson Group</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Linux System and Bash</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="_sources/linux.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
             
   <div class="section" id="linux-system-and-bash">
 <h1>Linux System and Bash<a class="headerlink" href="#linux-system-and-bash" title="Permalink to this headline">¶</a></h1>
-<p>Here is a useful <a class="reference external" href="http://ryanstutorials.net/linuxtutorial/">introduction on Linux systen</a>, including information on <a class="reference external" href="http://ryanstutorials.net/linuxtutorial/vi.php">vi</a> and <a class="reference external" href="http://ryanstutorials.net/linuxtutorial/grep.php">Grep and Regular Expressions</a>. Greenplanet uses <a class="reference external" href="http://en.wikipedia.org/wiki/Scientific_Linux">Scientific Linux</a>, with <a class="reference external" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a> as default system language. For example you can navigate system with <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">path</span></tt>, execute a file with <tt class="docutils literal"><span class="pre">.</span> <span class="pre">/someExecutable</span></tt>, make new directory with <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">directoryName</span></tt>.</p>
+<p>Here is a useful <a class="reference external" href="http://ryanstutorials.net/linuxtutorial/">introduction on Linux systen</a>, including <a class="reference external" href="http://ryanstutorials.net/linuxtutorial/vi.php">introduction on vi</a> and <a class="reference external" href="http://ryanstutorials.net/linuxtutorial/grep.php">grep and regular expressions</a>.</p>
+<p>Greenplanet uses <a class="reference external" href="http://en.wikipedia.org/wiki/Scientific_Linux">Scientific Linux</a>, with <a class="reference external" href="http://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a> as default system language. More infomation can be found at <a class="reference external" href="https://greenplanet.ps.uci.edu/help.html">Greenplanet help page</a>.</p>
 <div class="section" id="connecting-to-linux-server">
 <h2>Connecting to Linux Server<a class="headerlink" href="#connecting-to-linux-server" title="Permalink to this headline">¶</a></h2>
-<p>Tips on connecting/downloading to/from a server, especially <a class="reference external" href="https://greenplanet.ps.uci.edu/help.html">Green Planet</a>.</p>
 <div class="section" id="login-nodes">
 <h3>Login Nodes<a class="headerlink" href="#login-nodes" title="Permalink to this headline">¶</a></h3>
 <p>First login to <strong>login nodes</strong>. With X11 forwarding enabled:</p>
@@ -67,11 +135,40 @@
 </pre></div>
 </div>
 <p>Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password.</p>
-<p>Using public key authentication with SSH avoids typing password every time. Instructions can be found <a class="reference external" href="http://crashmag.net/public-key-authentication-awith-ssh-both-with-and-without-a-password">here</a>.</p>
+<div class="section" id="public-key-authentication-with-ssh">
+<h4>Public Key Authentication with SSH<a class="headerlink" href="#public-key-authentication-with-ssh" title="Permalink to this headline">¶</a></h4>
+<p>SSH can use the RSA cryptosystem to generate a key pair (public key and private key), and could be used to avoid typing password every time. Math behind this interesting asymmetric cryptography algorithms can be found <a class="reference external" href="http://mathworld.wolfram.com/RSAEncryption.html">here</a>.</p>
+<p>First <tt class="docutils literal"><span class="pre">cd</span></tt> to your local home directory, and run:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ssh-keygen -t rsa
+</pre></div>
+</div>
+<p>You can leave <tt class="docutils literal"><span class="pre">passphrase</span></tt> empty when been asked. Then upload the public key to the server:</p>
+<div class="highlight-bash"><div class="highlight"><pre>cat ~/.ssh/id_rsa.pub | ssh user:password@hostname <span class="s1">&#39;cat &gt;&gt; .ssh/authorized_keys&#39;</span>
+</pre></div>
+</div>
+<p>And you are all set.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Be sure to <tt class="docutils literal"><span class="pre">cat</span></tt> the public key instead of <tt class="docutils literal"><span class="pre">scp</span></tt> it; copying the key will overwrite your previous authorized keys.</p>
+</div>
+</div>
+<div class="section" id="macfusion-mac">
+<h4>Macfusion (Mac)<a class="headerlink" href="#macfusion-mac" title="Permalink to this headline">¶</a></h4>
+<p>This will mount remote files and allows you to manipulate them as local files. Instruction and download from <a class="reference external" href="http://macfusionapp.org/">here</a>. Depend on <a class="reference external" href="http://osxfuse.github.io/">FUSE for OS X</a>.</p>
+</div>
+<div class="section" id="sshfs-linux-mac-and-windows">
+<h4>SSHFS (Linux, Mac and Windows)<a class="headerlink" href="#sshfs-linux-mac-and-windows" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference external" href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a>
+<a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh">https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh</a></p>
+</div>
 </div>
 <div class="section" id="computing-nodes">
 <h3>Computing Nodes<a class="headerlink" href="#computing-nodes" title="Permalink to this headline">¶</a></h3>
-<p>Computation should be done on computing nodes. Simply <tt class="docutils literal"><span class="pre">ssh</span></tt> to an computing node by <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">compute-2-6</span> <span class="pre">-Y</span></tt>. Randerson group has nodes from <tt class="docutils literal"><span class="pre">-10-251</span></tt> to <tt class="docutils literal"><span class="pre">-10-254</span></tt>, and  reservation for 48 cores on <tt class="docutils literal"><span class="pre">-2-9</span></tt>.</p>
+<p>Computation should be done on computing nodes. Simply <tt class="docutils literal"><span class="pre">ssh</span></tt> to an computing node by <tt class="docutils literal"><span class="pre">ssh</span> <span class="pre">compute-2-6</span> <span class="pre">-Y</span></tt>.
+You could also use <tt class="docutils literal"><span class="pre">qsub</span></tt> to request memory and CPU for current session. For example:</p>
+<div class="highlight-bash"><div class="highlight"><pre>qsub -q randerson_f -X -I -l <span class="nv">walltime</span><span class="o">=</span>24:00:00,mem<span class="o">=</span>16g,nodes<span class="o">=</span>1:ppn<span class="o">=</span>30
+</pre></div>
+</div>
 </div>
 <div class="section" id="job-submission-to-cluster">
 <h3>Job Submission to Cluster<a class="headerlink" href="#job-submission-to-cluster" title="Permalink to this headline">¶</a></h3>
@@ -98,94 +195,150 @@
 <p>For path in Linux system, space should be proceeded by <tt class="docutils literal"><span class="pre">\</span></tt>. For exampe <tt class="docutils literal"><span class="pre">./Google</span> <span class="pre">Drive</span></tt> should be <tt class="docutils literal"><span class="pre">./Google\</span> <span class="pre">Drive</span></tt>.</p>
 </div>
 </div>
+<div class="section" id="bash-basic-commands">
+<h2>Bash Basic Commands<a class="headerlink" href="#bash-basic-commands" title="Permalink to this headline">¶</a></h2>
+<p>Change Directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>path
+</pre></div>
+</div>
+<p>Make new directory:</p>
+<div class="highlight-bash"><div class="highlight"><pre>mkdir DirectoryName
+</pre></div>
+</div>
+<p>Execute a file with (you may need to do <tt class="docutils literal"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">SomeExecutable</span></tt> first):</p>
+<div class="highlight-bash"><div class="highlight"><pre>./SomeExecutable
+</pre></div>
+</div>
+<p>Get <strong>processes</strong> snapshot with <tt class="docutils literal"><span class="pre">ps</span></tt>, or user-oriented output format with <tt class="docutils literal"><span class="pre">ps</span> <span class="pre">u</span></tt>. Kill a process with <tt class="docutils literal"><span class="pre">kill</span> <span class="pre">-9</span> <span class="pre">processID</span></tt>.</p>
+<p><tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-a</span></tt> starts a new <strong>screen</strong>, <em>Ctrl-a-d</em> detachs from it, and <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-r</span> <span class="pre">screenID</span></tt> reattachs. <em>screenID</em> will showup after <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-r</span></tt> when you have multi-screens. Terminate a screen with <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-X</span> <span class="pre">-S</span> <span class="pre">screenID</span> <span class="pre">quit</span></tt>. If your network connection fails, screen will automatically detach your session.</p>
+<div class="section" id="symbolic-link">
+<span id="symb-ln"></span><h3>Symbolic Link<a class="headerlink" href="#symbolic-link" title="Permalink to this headline">¶</a></h3>
+<p>Symbolic links are useful to organize files scattered on different disks. Create a symbolic link with:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ln -s <span class="nv">$oldfnm</span> <span class="nv">$newfnm</span>
+</pre></div>
+</div>
+<p>For example, here is a Bash script to create symbolic links from MCD12Q1 <tt class="docutils literal"><span class="pre">/gdata/randerson2/group/MODIS/MCD12Q1/V051/</span></tt> to current directory, rename them, and put them into different folders according to tile:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span class="c">#!/bin/bash</span>
+<span class="nv">dir1</span><span class="o">=</span>/gdata/randerson2/group/MODIS/MCD12Q1/V051/
+<span class="nv">dir2</span><span class="o">=</span><span class="nv">$PWD</span>
+<span class="nb">echo</span> <span class="nv">$dir1</span>
+<span class="nb">echo</span> <span class="nv">$dir2</span>
+<span class="nb">cd</span> <span class="nv">$dir1</span>
+<span class="k">for </span>file in */*.hdf
+<span class="k">do</span>
+<span class="k">  if</span> <span class="o">[</span> -e <span class="s2">&quot;$file&quot;</span> <span class="o">]</span>
+  <span class="k">then</span>
+<span class="k">    </span><span class="nv">vyear</span><span class="o">=</span><span class="k">${</span><span class="nv">file</span><span class="p">:</span><span class="nv">20</span><span class="p">:</span><span class="nv">4</span><span class="k">}</span>
+    <span class="nv">vdoy</span><span class="o">=</span><span class="k">${</span><span class="nv">file</span><span class="p">:</span><span class="nv">24</span><span class="p">:</span><span class="nv">3</span><span class="k">}</span>
+    <span class="nv">vh</span><span class="o">=</span><span class="k">${</span><span class="nv">file</span><span class="p">:</span><span class="nv">29</span><span class="p">:</span><span class="nv">2</span><span class="k">}</span>
+    <span class="nv">vv</span><span class="o">=</span><span class="k">${</span><span class="nv">file</span><span class="p">:</span><span class="nv">32</span><span class="p">:</span><span class="nv">2</span><span class="k">}</span>
+    <span class="nv">newdir</span><span class="o">=</span><span class="s2">&quot;$dir2/h&quot;</span><span class="nv">$vh</span><span class="s2">&quot;v&quot;</span><span class="nv">$vv</span><span class="s2">&quot;&quot;</span>
+    <span class="nv">oldfnm</span><span class="o">=</span><span class="s2">&quot;$dir1/$file&quot;</span>
+    <span class="nv">newfnm</span><span class="o">=</span><span class="s2">&quot;$newdir/MCD12Q1.A&quot;</span><span class="nv">$vyear</span><span class="s2">&quot;&quot;</span><span class="nv">$vdoy</span><span class="s2">&quot;.h&quot;</span><span class="nv">$vh</span><span class="s2">&quot;v&quot;</span><span class="nv">$vv</span><span class="s2">&quot;.hdf&quot;</span>
+    <span class="nb">echo</span> <span class="nv">$newfnm</span>
+    <span class="k">if</span> <span class="o">[</span> -d <span class="nv">$newdir</span> <span class="o">]</span>
+    <span class="k">then</span>
+<span class="k">      </span><span class="nb">echo</span> <span class="s2">&quot;Dir exist&quot;</span>
+    <span class="k">else</span>
+<span class="k">      </span>mkdir <span class="nv">$newdir</span>
+    <span class="k">fi</span>
+<span class="k">    </span>ln -s <span class="nv">$oldfnm</span> <span class="nv">$newfnm</span>
+  <span class="k">fi</span>
+<span class="k">done</span>
+
+<span class="nb">cd</span> <span class="nv">$dirc</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="system-tools">
 <h2>System Tools<a class="headerlink" href="#system-tools" title="Permalink to this headline">¶</a></h2>
 <p>Softwares can be found under <tt class="docutils literal"><span class="pre">/sopt</span></tt>.</p>
+<div class="section" id="matlab">
+<h3>Matlab<a class="headerlink" href="#matlab" title="Permalink to this headline">¶</a></h3>
+<p><strong>Matlab</strong> is located at <tt class="docutils literal"><span class="pre">/sopt/rc/matlab_float_2012b.sh</span></tt>. First execute the <tt class="docutils literal"><span class="pre">.sh</span></tt> file, and then start Matlab with <tt class="docutils literal"><span class="pre">matlab</span></tt>, <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodesktop</span></tt> or <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodisplay</span></tt></p>
+</div>
 <div class="section" id="download">
 <h3>Download<a class="headerlink" href="#download" title="Permalink to this headline">¶</a></h3>
-<p>wget:</p>
-<div class="highlight-bash"><div class="highlight"><pre>wget -r -np -A.nc http://dust.ess.uci.edu/Yi essgcm15/
-wget -r --follow-ftp http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/ -nd -A hdf
-wget -r http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/2001.11.09/ *h20v10*.hdf
-wget -r --no-parent --reject <span class="s2">&quot;index.html*&quot;</span> http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/*
+<div class="section" id="wget">
+<h4>wget<a class="headerlink" href="#wget" title="Permalink to this headline">¶</a></h4>
+<p>With user name and password:</p>
+<div class="highlight-bash"><div class="highlight"><pre>wget ftp://ftp.cartographic.com/09_22_14/LandScan2013.zip --user<span class="o">=</span>ucs4nd --password<span class="o">=</span><span class="s2">&quot;s4ndi3g0&quot;</span>
 </pre></div>
 </div>
-<p><strong>Matlab</strong> is located at <tt class="docutils literal"><span class="pre">/sopt/rc/matlab_float_2012b.sh</span></tt>. First execute the <tt class="docutils literal"><span class="pre">.sh</span></tt> file, and then start Matlab with <tt class="docutils literal"><span class="pre">matlab</span></tt>, <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodesktop</span></tt> or <tt class="docutils literal"><span class="pre">matlab</span> <span class="pre">-nodisplay</span></tt></p>
-<p>Get <strong>processes</strong> snapshot with <tt class="docutils literal"><span class="pre">ps</span></tt>, or user-oriented output format with <tt class="docutils literal"><span class="pre">ps</span> <span class="pre">u</span></tt>. Kill a process with <tt class="docutils literal"><span class="pre">kill</span> <span class="pre">-9</span> <span class="pre">processID</span></tt>.</p>
-<p><tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-a</span></tt> starts a new <strong>screen</strong>, <em>Ctrl-a-d</em> detachs from it, and <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-r</span> <span class="pre">screenID</span></tt> reattachs. <em>screenID</em> will showup after <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-r</span></tt> when you have multi-screens. Terminate a screen with <tt class="docutils literal"><span class="pre">screen</span> <span class="pre">-X</span> <span class="pre">-S</span> <span class="pre">screenID</span> <span class="pre">quit</span></tt>. If your network connection fails, screen will automatically detach your session.</p>
+<p>Multiple files:</p>
+<div class="highlight-bash"><div class="highlight"><pre>wget -r --no-parent -A.nc --reject <span class="s2">&quot;index.html*&quot;</span> http://e4ftl01.cr.usgs.gov/MOLT/MOD15A2.005/*
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Linux System and Bash</a><ul>
-<li><a class="reference internal" href="#connecting-to-linux-server">Connecting to Linux Server</a><ul>
-<li><a class="reference internal" href="#login-nodes">Login Nodes</a></li>
-<li><a class="reference internal" href="#computing-nodes">Computing Nodes</a></li>
-<li><a class="reference internal" href="#job-submission-to-cluster">Job Submission to Cluster</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#system-tools">System Tools</a><ul>
-<li><a class="reference internal" href="#download">Download</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="python.html" class="btn btn-neutral float-right" title="Python"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Welcome to Technical Notes of Randerson Group!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">Welcome to Land Process Workflow&#8217;s documentation!</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="python.html"
-                        title="next chapter">&lt;no title&gt;</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/linux.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Guo Liu.
     </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="related">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="right" >
-          <a href="python.html" title="&lt;no title&gt;"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="index.html" title="Welcome to Land Process Workflow’s documentation!"
-             >previous</a> |</li>
-        <li><a href="index.html">Technical Note of Randerson Group 0.0 documentation</a> &raquo;</li> 
-      </ul>
-    </div>
-    <div class="footer">
-        &copy; Copyright 2014, Guo Liu.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
-    </div>
-  </body>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

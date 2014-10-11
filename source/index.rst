@@ -1,10 +1,15 @@
-.. Land Process Workflow documentation master file, created by
+.. Technical Notes of Randerson Group master file, created by
    sphinx-quickstart on Tue Sep 30 16:27:01 2014.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Land Process Workflow's documentation!
+Welcome to Technical Notes of Randerson Group!
 =================================================
+
+How to contribute
+----------------------------------------------------------------------------------------------------
+Run ``git clone https://github.com/uci-randerson-lab/Technical-Notes-of-Randerson-Group.git`` to clone this repository, or login to 
+
 
 Contents:
 
@@ -15,7 +20,7 @@ Contents:
    python
    gdal
    tools
-   pyEarth
+   group
 
 Indices and tables
 ==================

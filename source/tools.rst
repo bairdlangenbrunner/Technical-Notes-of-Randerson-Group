@@ -5,7 +5,11 @@ Useful Tools
 
 vi
 ====================================================================================================
-# at beginning of 14-20 line::
+A nice introduction on vi can be found `here <http://ryanstutorials.net/linuxtutorial/vi.php>`_. 
+
+Find and Replace/Add
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For example, adding ``#`` at beginning of line 14-20::
 
     14,20s/^/#/
 
@@ -32,6 +36,7 @@ Looks at all the currently tracked files and stages the changes to those files i
 
     git add -A
 Equivalent to ``git add .; git add -u``.
+
 
 Delete a branch
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
