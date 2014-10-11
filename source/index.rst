@@ -12,7 +12,15 @@ How to contribute
 ----------------------------------------------------------------------------------------------------
 This documentation is build with `Sphinx <http://sphinx-doc.org/>`_, using **reStructuredText**. The syntax is straight forward and the source files are self-explanatory. Therefore, you don't need much knowledge on either **Sphinx** nor **reStructuredText** to contribute to it.
 
-Login to ``zea.ess.uci.edu``, and find this repository under ``/var/www/html/group/Technical-Notes-of-Randerson-Group``. Or run ``git clone https://github.com/uci-randerson-lab/Technical-Notes-of-Randerson-Group.git`` to clone this repository to your local mechine. Source file is inside directory ``source`` and you can edit the ``.rst`` files directly. Each of the ``.rst`` files correspond to a page in the ``.html`` file. If you add a page, don't forget to add the name of the source file in ``index.rst``. 
+Login to ``zea.ess.uci.edu``, and find this repository here::
+
+    /var/www/html/group/Technical-Notes-of-Randerson-Group
+
+Or clone this repository to your local mechine by::
+
+    git clone https://github.com/uci-randerson-lab/Technical-Notes-of-Randerson-Group.git 
+
+Source file is inside directory ``source`` and you can edit the ``.rst`` files directly. Each of the ``.rst`` files correspond to a page in the ``.html`` file. If you add a page, don't forget to add the name of the source file in ``index.rst``. 
 
 After you finish your editing, run ``make html`` in the top directory, and you will find your newly built html file in ``build/html``. Then add changes to git by::
 

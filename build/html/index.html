@@ -119,7 +119,34 @@
             
   <div class="section" id="welcome-to-technical-notes-of-randerson-group">
 <h1>Welcome to Technical Notes of Randerson Group!<a class="headerlink" href="#welcome-to-technical-notes-of-randerson-group" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
+<div class="section" id="how-to-contribute">
+<h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
+<p>This documentation is build with <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a>, using <strong>reStructuredText</strong>. The syntax is straight forward and the source files are self-explanatory. Therefore, you don&#8217;t need much knowledge on either <strong>Sphinx</strong> nor <strong>reStructuredText</strong> to contribute to it.</p>
+<p>Login to <tt class="docutils literal"><span class="pre">zea.ess.uci.edu</span></tt>, and find this repository here:</p>
+<div class="highlight-bash"><div class="highlight"><pre>/var/www/html/group/Technical-Notes-of-Randerson-Group
+</pre></div>
+</div>
+<p>Or clone this repository to your local mechine by:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git clone https://github.com/uci-randerson-lab/Technical-Notes-of-Randerson-Group.git
+</pre></div>
+</div>
+<p>Source file is inside directory <tt class="docutils literal"><span class="pre">source</span></tt> and you can edit the <tt class="docutils literal"><span class="pre">.rst</span></tt> files directly. Each of the <tt class="docutils literal"><span class="pre">.rst</span></tt> files correspond to a page in the <tt class="docutils literal"><span class="pre">.html</span></tt> file. If you add a page, don&#8217;t forget to add the name of the source file in <tt class="docutils literal"><span class="pre">index.rst</span></tt>.</p>
+<p>After you finish your editing, run <tt class="docutils literal"><span class="pre">make</span> <span class="pre">html</span></tt> in the top directory, and you will find your newly built html file in <tt class="docutils literal"><span class="pre">build/html</span></tt>. Then add changes to git by:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git add -A
+</pre></div>
+</div>
+<p>Commit and comment your changes by:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git commit -m <span class="s1">&#39;Your message&#39;</span>
+</pre></div>
+</div>
+<p>Finally, push your changes to git hosted on <a class="reference external" href="https://github.com/uci-randerson-lab">UCI Randerson Lab GitHub Group</a>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>git push
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="contents">
+<h1>Contents:<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="linux.html">Linux System and Bash</a><ul>
