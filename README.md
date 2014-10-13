@@ -1,3 +1,6 @@
+The html file can be viewed here: http://zea.ess.uci.edu/group/Technical-Notes-of-Randerson-Group/build/html/index.html
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 How to contribute
 ----------------------------------------------------------------------------------------------------
 This documentation is build with Sphinx <http://sphinx-doc.org/>, using **reStructuredText**. The syntax is straight forward and the source files are self-explanatory. Therefore, you don't need much knowledge on either **Sphinx** nor **reStructuredText** to contribute.
