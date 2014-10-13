@@ -1,5 +1,5 @@
 The html file can be viewed here: http://zea.ess.uci.edu/group/Technical-Notes-of-Randerson-Group/build/html/index.html
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+
 
 How to contribute
 ----------------------------------------------------------------------------------------------------
