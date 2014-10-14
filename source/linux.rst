@@ -20,7 +20,7 @@ Or with trusted X11 forwarding enabled::
 
     ssh -Y userName@gplogin1.ps.uci.edu
 
-Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password.
+Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password. After you login for the first time, you can type ``passwd`` to change your password.
 
 Public Key Authentication with SSH
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -30,24 +30,22 @@ First ``cd`` to your local home directory, and run::
     
     ssh-keygen -t rsa
 
-You can leave ``passphrase`` empty when been asked. Then upload the public key to the server::
+You can leave ``passphrase`` empty when been asked. If you don't have directory ``.ssh`` on your server, you might need to create one by ``mkdir .ssh`` in your home directory. Then upload the public key to the server::
     
     cat ~/.ssh/id_rsa.pub | ssh user:password@hostname 'cat >> .ssh/authorized_keys'
 
-And you are all set. 
+ And you are all set. 
 
 .. warning::
     Be sure to ``cat`` the public key instead of ``scp`` it; copying the key will overwrite your previous authorized keys.
 
-Macfusion (Mac)
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-This will mount remote files and allows you to manipulate them as local files. Instruction and download from `here <http://macfusionapp.org/>`_. Depend on `FUSE for OS X <http://osxfuse.github.io/>`_. 
-
 SSHFS (Linux, Mac and Windows)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-http://fuse.sourceforge.net/sshfs.html
-https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh
+This will mount remote files and allows you to manipulate them as local files. Install SSHFS, for example ``sudo apt-get install sshfs`` on Ubuntu/Debian, `download SSHFS and OSXFUSE <http://osxfuse.github.io/>`_ or ``brew install sshfs`` on Mac. Then create your mount point by ``mkdir /home/NameForMyPoint``, and mount it by ``sshfs UserName@RemoteServer:/RemotePath /home/NameForMyPoint``.
 
+Macfusion (Mac)
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Similar to SSHFS, but uses graphic interface. Less stable. Instruction and download from `here <http://macfusionapp.org/>`_. Depends on `OSXFUSE <http://osxfuse.github.io/>`_. 
 
 Computing Nodes
 ----------------------------------------------------------------------------------------------------
@@ -77,8 +75,6 @@ Report the status of a job::
 Download/Upload from/to a Server::
 
     scp userName@gplogin1.ps.uci.edu:fileSourcePath fileTargetPath
-
-For path in Linux system, space should be proceeded by ``\``. For exampe ``./Google Drive`` should be ``./Google\ Drive``.
 
 Bash Basic Commands
 ====================================================================================================
@@ -137,6 +133,13 @@ For example, here is a Bash script to create symbolic links from MCD12Q1 ``/gdat
     done
     
     cd $dirc
+
+Bash Gotchas
+----------------------------------------------------------------------------------------------------
+
+Space In File Name
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+For path in Linux system, space should be proceeded by ``\``. For exampe ``./Google Drive`` should be ``./Google\ Drive``.
 
 System Tools
 ====================================================================================================

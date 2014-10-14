@@ -1,122 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Linux System and Bash &mdash; Technical Note of Randerson Group 0.0 documentation</title>
-  
-
-  
-  
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  
-  
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-
-  
-
-  
-  
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  
-
-  
-    <link rel="top" title="Technical Note of Randerson Group 0.0 documentation" href="index.html"/>
-        <link rel="next" title="Python" href="python.html"/>
-        <link rel="prev" title="Welcome to Technical Notes of Randerson Group!" href="index.html"/> 
-
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+    <title>Linux System and Bash &mdash; Technical Note of Randerson Group 0.0 documentation</title>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-nav-search">
-        <a href="index.html" class="fa fa-home"> Technical Note of Randerson Group</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-      </div>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Technical Note of Randerson Group 0.0 documentation" href="index.html" />
+    <link rel="next" title="Python" href="python.html" />
+    <link rel="prev" title="Welcome to Technical Notes of Randerson Group!" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="python.html" title="Python"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Technical Notes of Randerson Group!"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Technical Note of Randerson Group 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        
-        
-            <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">Linux System and Bash</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#connecting-to-linux-server">Connecting to Linux Server</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bash-basic-commands">Bash Basic Commands</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#system-tools">System Tools</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="python.html">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="python.html#installation-and-package-manager">Installation and Package Manager</a></li>
-<li class="toctree-l2"><a class="reference internal" href="python.html#useful-package">Useful Package</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="gdal.html">GDAL Utilities and Python Binding</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="gdal.html#installation">Installation</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="tools.html#vi">vi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html#git">git</a></li>
-<li class="toctree-l2"><a class="reference internal" href="tools.html#decompilers">Decompilers</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="group.html">Resource for Randerson Group</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="group.html#computation">Computation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="group.html#data">Data</a></li>
-</ul>
-</li>
-</ul>
-
-        
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">Technical Note of Randerson Group</a>
-      </nav>
-
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
-      
-    <li>Linux System and Bash</li>
-      <li class="wy-breadcrumbs-aside">
-        
-          <a href="_sources/linux.txt" rel="nofollow"> View page source</a>
-        
-      </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
             
   <div class="section" id="linux-system-and-bash">
 <h1>Linux System and Bash<a class="headerlink" href="#linux-system-and-bash" title="Permalink to this headline">¶</a></h1>
@@ -134,7 +66,7 @@
 <div class="highlight-bash"><div class="highlight"><pre>ssh -Y userName@gplogin1.ps.uci.edu
 </pre></div>
 </div>
-<p>Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password.</p>
+<p>Trusted X11 forwardings are not subjected to the X11 SECURITY extension controls. Then enter password. After you login for the first time, you can type <tt class="docutils literal"><span class="pre">passwd</span></tt> to change your password.</p>
 <div class="section" id="public-key-authentication-with-ssh">
 <h4>Public Key Authentication with SSH<a class="headerlink" href="#public-key-authentication-with-ssh" title="Permalink to this headline">¶</a></h4>
 <p>SSH can use the RSA cryptosystem to generate a key pair (public key and private key), and could be used to avoid typing password every time. Math behind this interesting asymmetric cryptography algorithms can be found <a class="reference external" href="http://mathworld.wolfram.com/RSAEncryption.html">here</a>.</p>
@@ -142,24 +74,24 @@
 <div class="highlight-bash"><div class="highlight"><pre>ssh-keygen -t rsa
 </pre></div>
 </div>
-<p>You can leave <tt class="docutils literal"><span class="pre">passphrase</span></tt> empty when been asked. Then upload the public key to the server:</p>
-<div class="highlight-bash"><div class="highlight"><pre>cat ~/.ssh/id_rsa.pub | ssh user:password@hostname <span class="s1">&#39;cat &gt;&gt; .ssh/authorized_keys&#39;</span>
+<p>You can leave <tt class="docutils literal"><span class="pre">passphrase</span></tt> empty when been asked. If you don&#8217;t have directory <tt class="docutils literal"><span class="pre">.ssh</span></tt> on your server, you might need to create one by <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">.ssh</span></tt> in your home directory. Then upload the public key to the server:</p>
+<div class="highlight-bash"><div class="highlight"><pre>   cat ~/.ssh/id_rsa.pub | ssh user:password@hostname <span class="s1">&#39;cat &gt;&gt; .ssh/authorized_keys&#39;</span>
+
+And you are all set.
 </pre></div>
 </div>
-<p>And you are all set.</p>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
 <p class="last">Be sure to <tt class="docutils literal"><span class="pre">cat</span></tt> the public key instead of <tt class="docutils literal"><span class="pre">scp</span></tt> it; copying the key will overwrite your previous authorized keys.</p>
 </div>
 </div>
-<div class="section" id="macfusion-mac">
-<h4>Macfusion (Mac)<a class="headerlink" href="#macfusion-mac" title="Permalink to this headline">¶</a></h4>
-<p>This will mount remote files and allows you to manipulate them as local files. Instruction and download from <a class="reference external" href="http://macfusionapp.org/">here</a>. Depend on <a class="reference external" href="http://osxfuse.github.io/">FUSE for OS X</a>.</p>
-</div>
 <div class="section" id="sshfs-linux-mac-and-windows">
 <h4>SSHFS (Linux, Mac and Windows)<a class="headerlink" href="#sshfs-linux-mac-and-windows" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference external" href="http://fuse.sourceforge.net/sshfs.html">http://fuse.sourceforge.net/sshfs.html</a>
-<a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh">https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh</a></p>
+<p>This will mount remote files and allows you to manipulate them as local files. Install SSHFS, for example <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">sshfs</span></tt> on Ubuntu/Debian, <a class="reference external" href="http://osxfuse.github.io/">download SSHFS and OSXFUSE</a> or <tt class="docutils literal"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">sshfs</span></tt> on Mac. Then create your mount point by <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">/home/NameForMyPoint</span></tt>, and mount it by <tt class="docutils literal"><span class="pre">sshfs</span> <span class="pre">UserName&#64;RemoteServer:/RemotePath</span> <span class="pre">/home/NameForMyPoint</span></tt>.</p>
+</div>
+<div class="section" id="macfusion-mac">
+<h4>Macfusion (Mac)<a class="headerlink" href="#macfusion-mac" title="Permalink to this headline">¶</a></h4>
+<p>Similar to SSHFS, but uses graphic interface. Less stable. Instruction and download from <a class="reference external" href="http://macfusionapp.org/">here</a>. Depends on <a class="reference external" href="http://osxfuse.github.io/">OSXFUSE</a>.</p>
 </div>
 </div>
 <div class="section" id="computing-nodes">
@@ -192,7 +124,6 @@ You could also use <tt class="docutils literal"><span class="pre">qsub</span></t
 <div class="highlight-bash"><div class="highlight"><pre>scp userName@gplogin1.ps.uci.edu:fileSourcePath fileTargetPath
 </pre></div>
 </div>
-<p>For path in Linux system, space should be proceeded by <tt class="docutils literal"><span class="pre">\</span></tt>. For exampe <tt class="docutils literal"><span class="pre">./Google</span> <span class="pre">Drive</span></tt> should be <tt class="docutils literal"><span class="pre">./Google\</span> <span class="pre">Drive</span></tt>.</p>
 </div>
 </div>
 <div class="section" id="bash-basic-commands">
@@ -250,6 +181,13 @@ You could also use <tt class="docutils literal"><span class="pre">qsub</span></t
 </pre></div>
 </div>
 </div>
+<div class="section" id="bash-gotchas">
+<h3>Bash Gotchas<a class="headerlink" href="#bash-gotchas" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="space-in-file-name">
+<h4>Space In File Name<a class="headerlink" href="#space-in-file-name" title="Permalink to this headline">¶</a></h4>
+<p>For path in Linux system, space should be proceeded by <tt class="docutils literal"><span class="pre">\</span></tt>. For exampe <tt class="docutils literal"><span class="pre">./Google</span> <span class="pre">Drive</span></tt> should be <tt class="docutils literal"><span class="pre">./Google\</span> <span class="pre">Drive</span></tt>.</p>
+</div>
+</div>
 </div>
 <div class="section" id="system-tools">
 <h2>System Tools<a class="headerlink" href="#system-tools" title="Permalink to this headline">¶</a></h2>
@@ -277,68 +215,90 @@ You could also use <tt class="docutils literal"><span class="pre">qsub</span></t
 
 
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="python.html" class="btn btn-neutral float-right" title="Python"/>Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="index.html" class="btn btn-neutral" title="Welcome to Technical Notes of Randerson Group!"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &copy; Copyright 2014, Guo Liu.
-    </p>
-  </div>
-
-  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
-</footer>
         </div>
       </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Linux System and Bash</a><ul>
+<li><a class="reference internal" href="#connecting-to-linux-server">Connecting to Linux Server</a><ul>
+<li><a class="reference internal" href="#login-nodes">Login Nodes</a><ul>
+<li><a class="reference internal" href="#public-key-authentication-with-ssh">Public Key Authentication with SSH</a></li>
+<li><a class="reference internal" href="#sshfs-linux-mac-and-windows">SSHFS (Linux, Mac and Windows)</a></li>
+<li><a class="reference internal" href="#macfusion-mac">Macfusion (Mac)</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#computing-nodes">Computing Nodes</a></li>
+<li><a class="reference internal" href="#job-submission-to-cluster">Job Submission to Cluster</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#bash-basic-commands">Bash Basic Commands</a><ul>
+<li><a class="reference internal" href="#symbolic-link">Symbolic Link</a></li>
+<li><a class="reference internal" href="#bash-gotchas">Bash Gotchas</a><ul>
+<li><a class="reference internal" href="#space-in-file-name">Space In File Name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-tools">System Tools</a><ul>
+<li><a class="reference internal" href="#matlab">Matlab</a></li>
+<li><a class="reference internal" href="#download">Download</a><ul>
+<li><a class="reference internal" href="#wget">wget</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-    </section>
-
-  </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
-      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
-      });
-  </script>
-   
-
-</body>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to Technical Notes of Randerson Group!</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="python.html"
+                        title="next chapter">Python</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/linux.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="python.html" title="Python"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to Technical Notes of Randerson Group!"
+             >previous</a> |</li>
+        <li><a href="index.html">Technical Note of Randerson Group 0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, Guo Liu.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
 </html>

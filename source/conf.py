@@ -83,7 +83,7 @@ exclude_patterns = []
 #default_role = None
 
 # If true, '()' will be appended to :func: etc. cross-reference text.
-#add_function_parentheses = True
+#addi_function_parentheses = True
 
 # If true, the current module name will be prepended to all description
 # unit titles (such as .. function::).
@@ -107,11 +107,14 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-import sphinx_rtd_theme
 
-html_theme = "sphinx_rtd_theme"
+try:
+    import sphinx_rtd_theme
+    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+except:
+    html_theme = "default"
 
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+#
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -209,7 +212,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'TechnicalNote.tex', u'Technical Note of Randerson Group Documentation',
+  ('ndex', 'TechnicalNote.tex', u'Technical Note of Randerson Group Documentation',
    u'Guo Liu', 'manual'),
 ]
 
