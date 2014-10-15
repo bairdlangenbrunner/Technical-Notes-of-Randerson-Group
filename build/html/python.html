@@ -65,7 +65,7 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Python</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation-and-package-manager">Installation and Package Manager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-package-manager-and-interactive-tools">Installation, Package Manager and Interactive Tools</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#useful-packages">Useful Packages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#python-gotchas">Python Gotchas</a></li>
 </ul>
@@ -121,13 +121,30 @@
             
   <div class="section" id="python">
 <h1>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="installation-and-package-manager">
-<h2>Installation and Package Manager<a class="headerlink" href="#installation-and-package-manager" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="installation-package-manager-and-interactive-tools">
+<h2>Installation, Package Manager and Interactive Tools<a class="headerlink" href="#installation-package-manager-and-interactive-tools" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="anaconda">
 <h3>Anaconda<a class="headerlink" href="#anaconda" title="Permalink to this headline">¶</a></h3>
 </div>
 <div class="section" id="canopy">
 <h3>Canopy<a class="headerlink" href="#canopy" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="ipython">
+<h3>IPython<a class="headerlink" href="#ipython" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="auto-load-modules-on-startup">
+<h4>Auto-load Modules on Startup<a class="headerlink" href="#auto-load-modules-on-startup" title="Permalink to this headline">¶</a></h4>
+<p>To create the blank config files, run:</p>
+<div class="highlight-bash"><div class="highlight"><pre>ipython profile create <span class="o">[</span>profilename<span class="o">]</span>
+</pre></div>
+</div>
+<p>If you leave out the profile name, the files will be created for the <tt class="docutils literal"><span class="pre">default</span></tt> profile. These will typically be located in <tt class="file docutils literal"><span class="pre">~/.ipython/profile_default/</span></tt>, and will be named <tt class="file docutils literal"><span class="pre">ipython_config.py</span></tt>, <tt class="file docutils literal"><span class="pre">ipython_notebook_config.py</span></tt>, etc. The settings in <tt class="file docutils literal"><span class="pre">ipython_config.py</span></tt> apply to all IPython commands.</p>
+<p>Add something like the following lines to <tt class="file docutils literal"><span class="pre">ipython_config.py</span></tt>:</p>
+<div class="highlight-bash"><div class="highlight"><pre>c.InteractiveShellApp.exec_lines <span class="o">=</span> <span class="o">[</span>
+    <span class="s1">&#39;import numpy&#39;</span>,
+    <span class="s1">&#39;import scipy&#39;</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="useful-packages">
@@ -165,41 +182,41 @@
 <div class="section" id="shallow-and-deep-copy">
 <h3>Shallow and Deep Copy<a class="headerlink" href="#shallow-and-deep-copy" title="Permalink to this headline">¶</a></h3>
 <p>Relevant for compound objects, i.e. objects containing other objects, like lists or class instances. For example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">colours1</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">]</span>
-<span class="n">colours2</span> <span class="o">=</span> <span class="n">colours1</span>
-<span class="n">colours2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s">&quot;blue&quot;</span>
-<span class="k">print</span> <span class="n">colours1</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">colours1</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;red&quot;</span>, <span class="s2">&quot;green&quot;</span><span class="o">]</span>
+<span class="nv">colours2</span> <span class="o">=</span> colours1
+colours2<span class="o">[</span>1<span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;blue&quot;</span>
+print colours1
 </pre></div>
 </div>
 <p>Results in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&#39;blue&#39;</span><span class="p">]</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span><span class="s1">&#39;red&#39;</span>, <span class="s1">&#39;blue&#39;</span><span class="o">]</span>
 </pre></div>
 </div>
 <p>This is because no new memory location had been allocated for <tt class="docutils literal"><span class="pre">colours2</span></tt> when <tt class="docutils literal"><span class="pre">colours2</span> <span class="pre">=</span> <span class="pre">colours1</span></tt>, only a pointer is created (shallow copy). However, if you do:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">colours1</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">]</span>
-<span class="n">colours2</span> <span class="o">=</span> <span class="n">colours1</span>
-<span class="n">colours2</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;rouge&quot;</span><span class="p">,</span> <span class="s">&quot;vert&quot;</span><span class="p">]</span>
-<span class="k">print</span> <span class="n">colours1</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">colours1</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;red&quot;</span>, <span class="s2">&quot;green&quot;</span><span class="o">]</span>
+<span class="nv">colours2</span> <span class="o">=</span> colours1
+<span class="nv">colours2</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;rouge&quot;</span>, <span class="s2">&quot;vert&quot;</span><span class="o">]</span>
+print colours1
 </pre></div>
 </div>
 <p>The result will be:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="s">&#39;red&#39;</span><span class="p">,</span> <span class="s">&#39;green&#39;</span><span class="p">]</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="o">[</span><span class="s1">&#39;red&#39;</span>, <span class="s1">&#39;green&#39;</span><span class="o">]</span>
 </pre></div>
 </div>
 <p>This is becase a new memory location was allocated for <tt class="docutils literal"><span class="pre">colours2</span></tt> when you assigned a complete new list. The same thing goes with Numpy arrays:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span> <span class="p">)</span>
-<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
-<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">99</span>
-<span class="n">a</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">a</span> <span class="o">=</span> numpy.array<span class="o">(</span> <span class="o">[[</span>1,2,3<span class="o">]</span>, <span class="o">[</span>4,5,6<span class="o">]]</span> <span class="o">)</span>
+<span class="nv">b</span> <span class="o">=</span> a
+b<span class="o">[</span>0,0<span class="o">]</span> <span class="o">=</span> 99
+a
 </pre></div>
 </div>
 <p>Results in:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">array</span><span class="p">([[</span><span class="mi">99</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">],</span>
-      <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">]])</span>
+<div class="highlight-bash"><div class="highlight"><pre>array<span class="o">([[</span>99,  2,  3<span class="o">]</span>,
+       <span class="o">[</span> 4,  5,  6<span class="o">]])</span>
 </pre></div>
 </div>
 <p>This can be avoided by using method <tt class="docutils literal"><span class="pre">deepcopy</span></tt> from the standard module <strong>copy</strong>, or method <tt class="docutils literal"><span class="pre">.copy</span></tt> in Numpy:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nv">b</span> <span class="o">=</span> a.copy<span class="o">()</span>
 </pre></div>
 </div>
 <p>However, shallow copy and related <tt class="docutils literal"><span class="pre">.view</span></tt> method in Numpy can be used to save memory in many cases.</p>
