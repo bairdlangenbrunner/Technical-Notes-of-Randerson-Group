@@ -2,6 +2,7 @@
 
 Linux System and Bash
 ****************************************************************************************************
+
 Here is a useful `introduction on Linux systen <http://ryanstutorials.net/linuxtutorial/>`_, including `introduction on vi <http://ryanstutorials.net/linuxtutorial/vi.php>`_ and `grep and regular expressions <http://ryanstutorials.net/linuxtutorial/grep.php>`_. 
 
 Greenplanet uses `Scientific Linux <http://en.wikipedia.org/wiki/Scientific_Linux>`_, with `Bash <http://en.wikipedia.org/wiki/Bash_(Unix_shell)>`_ as default system language. More infomation can be found at `Greenplanet help page <https://greenplanet.ps.uci.edu/help.html>`_.

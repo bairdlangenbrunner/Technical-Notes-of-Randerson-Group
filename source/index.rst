@@ -33,7 +33,7 @@ Or clone this repository to your local machine by::
 
 Source file is inside directory ``source`` and you can edit the ``.rst`` files directly. Each ``.rst`` file corresponds to one page in the ``.html`` file. If you add one ``.rst`` file, don't forget to add the name of the source file in ``index.rst``. 
 
-After you finish your editing, run ``make html`` in the top directory, and you will find your newly built html file inside ``build/html``. If you have Python ``sphinx_rtd_theme`` installed you will get html in `Read the Doc Theme <http://read-the-docs.readthedocs.org/en/latest/theme.html>`_, otherwise you will get the `Sphinx default theme <https://docs.python.org/2.7/index.html>`_. Then add changes to git by::
+After you finish your editing, run ``make html`` in the top directory, and you will find your newly built html file inside ``build/html``. If you have Python package ``sphinx_rtd_theme`` installed you will get html in `Read the Doc Theme <http://read-the-docs.readthedocs.org/en/latest/theme.html>`_, otherwise you will get the `Sphinx default theme <https://docs.python.org/2.7/index.html>`_. Then add changes to git by::
 
     git add -A
 
