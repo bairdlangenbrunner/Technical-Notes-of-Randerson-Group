@@ -12,9 +12,9 @@ Configurations for Python
 Greenplanet has already installed vim. You can check the version of vim installed by typing in version in vim’s command mode. The vim is only the basic version and does not have python setting, such as automatic indenting. Users can improve their experience with vim by editing the .vimrc file and .vim folder. If the file and folder do not exist, create them.
 
 1. Download pydiction
-    #. go to website http://www.vim.org/scripts/script.php?script_id=850 and download the newest version of pydiction.
-    #. copy python_pydiction.vim to ~/.vim/after/ftplugin; also copy complete-dict and pydiction.py to ~/.vim.
-    #. edit the .vimrc file and put the following codes in it::
+    #. download the newest version of pydiction from `here <http://www.vim.org/scripts/script.php?script_id=850>`_.
+    #. copy ``python_pydiction.vim`` to ``~/.vim/after/ftplugin``; also copy ``complete-dict`` and ``pydiction.py`` to ``~/.vim``.
+    #. edit the ``.vimrc`` file and put the following codes in it::
 
         let Tlist_Auto_Hightlight_Tag=1
         let Tlist_Auto_Open=1
