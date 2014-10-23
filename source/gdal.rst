@@ -56,9 +56,9 @@ Then you can install by::
     ./configure --prefix=$HOME/local/hdf4 --with-jpeg=$HOME/local/jpeg --with-zlib=$HOME/local/zlib --enable-shared --enable-static --disable-fortran --disable-netcdf
     make
     make install
+You need to disable netcdf to avoid possible conflict with netCDF linbrary.
 
-
-netcdf. Set varibles first::
+netCDF. Set varibles first::
 
     export CPPFLAGS=-I$HOME/local/hdf5/include
     export LDFLAGS=-L$HOME/local/hdf5/lib
