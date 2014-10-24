@@ -109,3 +109,7 @@ This can be avoided by using method ``deepcopy`` from the standard module **copy
     b = a.copy()
 
 However, shallow copy and related ``.view`` method in Numpy can be used to save memory in many cases.
+
+Matplotlib crash with X11 forward 
+----------------------------------------------------------------------------------------------------
+Crashes with ``-X``. Use ``-Y`` instead.
