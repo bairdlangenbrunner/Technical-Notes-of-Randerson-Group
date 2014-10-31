@@ -71,6 +71,7 @@ Then install::
 
 
 proj4::
+
     ./configure --prefix=$HOME/local/proj4
     make & make check
     make install
