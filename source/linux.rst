@@ -35,7 +35,7 @@ You can leave ``passphrase`` empty when been asked. If you don't have directory 
     
     cat ~/.ssh/id_rsa.pub | ssh user:password@hostname 'cat >> .ssh/authorized_keys'
 
- And you are all set. 
+And you are all set. 
 
 .. warning::
     Be sure to ``cat`` the public key instead of ``scp`` it; copying the key will overwrite your previous authorized keys.
