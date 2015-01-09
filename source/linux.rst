@@ -48,30 +48,25 @@ Macfusion (Mac)
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 Similar to SSHFS, but uses graphic interface. Less stable. Instruction and download from `here <http://macfusionapp.org/>`_. Depends on `OSXFUSE <http://osxfuse.github.io/>`_. 
 
-Computing Nodes
-----------------------------------------------------------------------------------------------------
-Computation should be done on computing nodes. Simply ``ssh`` to an computing node by ``ssh compute-2-6 -Y``.
-You could also use ``qsub`` to request memory and CPU for current session. For example::
-
-    qsub -q randerson_f -X -I -l walltime=24:00:00,mem=16g,nodes=1:ppn=30
-
 Job Submission to Cluster
 ----------------------------------------------------------------------------------------------------
-**Green Planet** uses the open-source PBS torque system:: 
+**Green Planet** is now using Slurm Workload Manager. Partition(queue) name for Randerson group is ``randerson``, available nodes are ``c-14-[29,191,193-194]`` and ``c-14-192``. Submit jobs with::
 
-    qsub -q randerson_f -l nodes=1:ppn=12 test.py
+    srun --pty -t 45 -p randerson test.py
 
-Show all queues::
+You can connect to a computing node with::
     
-    qstat -Q
+    ssh -Y c-14-29
 
-Delete a job:: 
+Or start interactive job session with:: 
+
+    srun --pty -t 45 -p randerson bash -i
     
-    qdel jobID
+Get all available nodes with::
 
-Report the status of a job::
+    sinfo -Q
 
-    checkjob jobID
+More can be found here <http://slurm.schedmd.com/rosetta.pdf>`_.
 
 Download/Upload from/to a Server::
 
