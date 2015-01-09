@@ -66,7 +66,7 @@ Get all available nodes with::
 
     sinfo -Q
 
-More can be found here <http://slurm.schedmd.com/rosetta.pdf>`_ .
+More can be found `here <http://slurm.schedmd.com/rosetta.pdf>`_ .
 
 Download/Upload from/to a Server::
 
