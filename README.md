@@ -5,7 +5,7 @@ How to contribute
 ----------------------------------------------------------------------------------------------------
 This documentation is build with Sphinx <http://sphinx-doc.org/>, using **reStructuredText**. The syntax is straight forward and the source files are self-explanatory. Therefore, you don't need much knowledge on either **Sphinx** nor **reStructuredText** to contribute.
 
-Here's how. Click the ``Edit on GitHub`` link on the upper right corner of the page, and it will take you to the source on GitHub. Just edit the source here. You will have to be a member of ``UCI Randerson Lab`` group on GitHub.
+Here's how. Click the ``Edit on GitHub`` link on the upper right corner of the page, and it will take you to the source on GitHub. Just edit the source here. You will have to be a member of **UCI Randerson Lab** group on GitHub.
 
 Or clone this repository to your local machine by::
 
