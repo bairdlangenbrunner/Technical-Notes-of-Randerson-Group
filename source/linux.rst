@@ -90,6 +90,10 @@ Get **processes** snapshot with ``ps``, or user-oriented output format with ``ps
 
 ``screen -a`` starts a new **screen**, *Ctrl-a-d* detachs from it, and ``screen -r screenID`` reattachs. *screenID* will showup after ``screen -r`` when you have multi-screens. Terminate a screen with ``screen -X -S screenID quit``. If your network connection fails, screen will automatically detach your session. You can't scroll up/down in Linux Screen with your mouse; instead you can type ``Ctrl + a`` and then press ``esc`` to enter scroll mode for Linux Screen. Then you can press ``Ctrl + u`` and ``Ctrl + d`` to scroll the display up/down half screen-full, or ``Ctrl + b`` and ``C-f`` scroll the display up/down a full screen.
 
+Show and rand size of directories:
+
+    du -sh * | sort -h -r
+
 .. _symb-ln:
 
 Symbolic Link
