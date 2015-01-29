@@ -64,7 +64,7 @@ Or start interactive job session with::
     
 Get all available nodes with::
 
-    sinfo -Q
+    sinfo -N
 
 More can be found `here <http://slurm.schedmd.com/rosetta.pdf>`_ .
 
