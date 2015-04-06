@@ -24,6 +24,7 @@ MCD12Q1 (land cover)              500m/year          2001-2010/global        /gd
 MOD13A1 (vegetation index)        500m/16day         2000-2013/global        /gdata/randerson2/group/MODIS/MOD13A1
 MOD44B (tree cover)               500m/year          2000-2010/global        /gdata/randerson3/group/MODIS/MOD44B
 MCD64A1 (burn area)               500m/month         2000.10-2013/global     /gdata/randerson2/giglio/MCD64A1
+GLEAM ET                          /                  /                       /gdata/randerson3/mmu/ILAMB/DATA/et/GLEAM/original
 GLC (land cover)                  30s/year           2000, 2009/global       /data8/data/guol3/GEM/GLC
 gROADS (road)                     -/-                -/global                /data8/data/guol3/CIESIN/gROADS
 GLoElev (elevation)               30s,5min/-         -/global                /data8/data/guol3/FAO/GloElev
